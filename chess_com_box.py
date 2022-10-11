@@ -11,7 +11,7 @@ import requests
 from github import Github
 
 WIDTH_JUSTIFICATION_SEPARATOR = "."
-GIST_TITLE = "♟︎ Chess.com Ratings"
+GIST_TITLE = "♟️ Chess.com Ratings"
 
 ENV_VAR_GIST_ID = "GIST_ID"
 ENV_VAR_GITHUB_TOKEN = "GH_TOKEN"
@@ -88,14 +88,14 @@ def main():
     bullet_line = get_rating_line("chess_bullet", "🚅", "Bullet", chess_stats)
     rapid_line = get_rating_line("chess_rapid", "⏲️", "Rapid", chess_stats)
     puzzles_line = get_rating_line("tactics", "🧩", "Tactics", chess_stats)
-    daily_line = get_rating_line("chess_daily", "☀️", "Daily", chess_stats)
+    #daily_line = get_rating_line("chess_daily", "☀️", "Daily", chess_stats)
 
     lines = [
         get_adjusted_line(blitz_line, 52),
         get_adjusted_line(bullet_line, 52),
         get_adjusted_line(rapid_line, 53),
         get_adjusted_line(puzzles_line, 52),
-        get_adjusted_line(daily_line, 53)
+        #get_adjusted_line(daily_line, 53)
     ]
     content = "\n".join(lines)
     update_gist(GIST_TITLE, content)
